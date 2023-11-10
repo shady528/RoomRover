@@ -1,9 +1,24 @@
 const express = require("express");
+const {
+    updateUser,
+    deleteUser,
+    getUser,
+    getUsers,
+} = require("../controllers/user.js");
+const { verifyAdmin, verifyToken, verifyUser } = require("../utils/verifyToken.js");
 
-const userRoute = express.Router();
+const usersRouter = express.Router();
 
-userRoute.get("/",()=>{
-    res.send("hello users");
-})
+//UPDATE
+usersRouter.put("/:id", verifyUser, updateUser);
 
-module.exports = userRoute;
+//DELETE
+usersRouter.delete("/:id", verifyUser, deleteUser);
+
+//GET
+usersRouter.get("/:id", verifyUser, getUser);
+
+//GET ALL
+usersRouter.get("/", verifyAdmin, getUsers);
+
+module.exports = usersRouter;

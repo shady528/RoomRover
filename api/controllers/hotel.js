@@ -98,4 +98,4 @@ const getHotelRooms = async (req, res, next) => {
     }
 };
 
-module.exports = { createHotel:createHotel, updateHotel:updateHotel, deleteHotel:deleteHotel, getHotel:getHotel, getHotels:getHotels, countByCity:countByCity, countByType:countByType, getHotelRooms:getHotelRooms};
+module.exports = { createHotel: createHotel, updateHotel: updateHotel, deleteHotel: deleteHotel, getHotel: getHotel, getHotels: getHotels, countByCity: countByCity, countByType: countByType, getHotelRooms: getHotelRooms };
